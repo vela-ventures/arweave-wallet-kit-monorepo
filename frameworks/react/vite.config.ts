@@ -31,7 +31,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", /^@arweave-wallet-kit\/styles\/.*/],
+      external: ["react", "react-dom", /^@arweave-wallet-kit\/styles\/.*/, 'react/jsx-runtime'],
       output: {
         plugins: [
           /**
@@ -63,6 +63,7 @@ export default defineConfig({
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          'react/jsx-runtime': 'ReactJsxRuntime',
         },
       },
     },
